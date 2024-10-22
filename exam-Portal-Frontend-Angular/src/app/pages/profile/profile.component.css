@@ -1,0 +1,106 @@
+/* General styles for larger screens */
+/* .container {
+    padding-top: 50px;
+    box-shadow: 0px 0px 20px -10px;
+} */
+
+.image {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+}
+
+.image img {
+    width: 250px;
+    height: 200px;
+}
+
+table {
+    margin-top: 50px;
+}
+
+table thead {
+    font-size: 20px;
+}
+
+table tbody {
+    font-size: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.buttons button {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+}
+@media (max-width: 1300px) {
+    /* Stack the buttons vertically and make them full width */
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    .buttons .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Responsive styling for smaller screens (tablets, mobiles) */
+@media (max-width: 768px) {
+    /* Stack the buttons vertically and make them full width */
+    .buttons {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .buttons .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Reduce table font size */
+    table thead {
+        font-size: 16px;
+    }
+
+    table tbody {
+        font-size: 16px;
+    }
+}
+
+/* Mobile-specific styling */
+@media (max-width: 576px) {
+    /* Adjust image size */
+    .image img {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Reduce font size in table for mobile screens */
+    table thead {
+        font-size: 14px;
+    }
+
+    table td {
+        font-size: 14px;
+    }
+
+    /* Buttons take full width and stack vertically */
+    .buttons {
+        width: 100%;
+    }
+
+    .buttons button {
+        width: 100%;
+        height: 45px;
+        font-size: 16px;
+    }
+}

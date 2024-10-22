@@ -1,0 +1,50 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row mt-4" style="box-shadow: 0px 0px 30px -10px;">
+            <div class="col-lg-12">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                      <div class="col-md-12">
+                        <div class="card-body">
+                            <h3 class="card-title">Read This Instruction Carefully.</h3>
+                            <p class="card-text"><small class="text-muted">You are one step ago to start the quiz.</small></p>
+                          <h5 class="card-title">{{quizes.title}}</h5>
+                          <p class="card-text">{{quizes.description}}</p>
+                          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                          <hr>
+                        </div>
+                        <div class="card-body">
+                          <h5 class="card-title">Important Instrauction</h5>
+                          <ul class="pt-4">
+                            <li><p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, ipsam!</p></li>
+                            <li><p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, ipsam!</p></li>
+                            <li><p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, ipsam!</p></li>
+                            <li><p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, ipsam!</p></li>
+                            <li><p class="card-text">There are <b>{{quizes.numberOfQuestions}}</b> numberOfQuestions you need to attemt all.</p></li>
+                            <li><p class="card-text">Each Questions have <b>{{quizes.maxMarks/quizes.numberOfQuestions}}</b> marks and no negative marking.</p></li>
+                          </ul>
+                          <hr>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Attemting Quiz</h5>
+                            <ul class="pt-4">
+                              <li><p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, ipsam!</p></li>
+                              <li><p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, ipsam!</p></li>
+                              <li><p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, ipsam!</p></li>
+                              <li><p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, ipsam!</p></li>
+                              <li><p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, ipsam!</p></li>
+                              <li><p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, ipsam!</p></li>
+                              <li><p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, ipsam!</p></li>
+                            </ul>
+                            <hr>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="btn" style="display: flex; justify-content: center;">
+                <button type="button" class="btn btn-danger" [routerLink]="['/start-quiz/',qId]">Attempt Quiz</button>
+            </div>
+        </div>
+    </div>
+</div>

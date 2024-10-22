@@ -1,0 +1,9 @@
+@media (max-width: 576px) {
+    .card-text {
+      font-size: 0.9rem;
+    }
+    .card-title {
+      font-size: 1.1rem;
+    }
+  }
+  

@@ -1,0 +1,106 @@
+<!-- add-quiz.component.html -->
+<div class="container pb-4 pt-3" style="box-shadow: 0px 0px 30px -10px;">
+    <h2 class="text-center">Update Quizzes</h2>
+    <form #quizForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="row col-md-8" style="margin: auto; margin-top: 30px;">
+  
+        <!-- Title Input -->
+        <div class="mb-3">
+          <label for="quizTitle" class="form-label">Enter Title</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="quizData.title"
+            name="title"
+            id="quizTitle"
+            placeholder="Enter title"
+            required
+          />
+        </div> 
+  
+        <!-- Description Input -->
+        <div class="mb-3">
+          <label for="quizDescription" class="form-label">Enter Description</label>
+          <textarea
+            class="form-control"
+            [(ngModel)]="quizData.description"
+            name="description"
+            id="quizDescription"
+            rows="3"
+            placeholder="Enter description"
+            required
+          ></textarea>
+        </div>
+  
+        <!-- Marks Input -->
+        <div class="mb-3">
+          <label for="quizMarks" class="form-label">Enter Marks</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="quizData.maxMarks"
+            name="maxMarks"
+            id="quizMarks"
+            placeholder="Enter marks"
+            required
+            min="0"
+          />
+        </div>
+  
+        <!-- Number of Questions Input -->
+        <div class="mb-3">
+          <label for="quizQuestions" class="form-label">Enter Number of Questions</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="quizData.numberOfQuestions"
+            name="numberOfQuestions"
+            id="quizQuestions"
+            placeholder="Enter number of questions"
+            required
+            min="1"
+          />
+        </div>
+  
+        <!-- Published Status (Checkbox) -->
+        <div class="form-check form-switch mb-3">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            [(ngModel)]="quizData.active"
+            name="active"
+            id="quizPublishedStatus"
+          />
+          <label class="form-check-label" for="quizPublishedStatus">Published Status</label>
+        </div>
+  
+        <!-- Category Dropdown -->
+        <div class="mb-3">
+          <label for="categorySelect" class="form-label">Select Category</label>
+          <select
+            class="form-select mt-2"
+            [(ngModel)]="quizData.category.cid"
+            name="category"
+            id="categorySelect"
+            aria-label="Select category"
+            required>
+            <option selected disabled value="">Select the category</option>
+            <option *ngFor="let category of categori" [value]="category.cid">
+              {{ category.title }}
+            </option>
+          </select>
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <div class="btn" style="display: flex; justify-content: center; margin-top: 20px;">
+        <button
+          type="submit"
+          class="btn btn-danger"
+          style="font-size: 20px; width: 150px; height: 50px;">       
+          Add
+        </button>
+      </div>
+    </form>
+  </div>
+  {{ quizData| json }}

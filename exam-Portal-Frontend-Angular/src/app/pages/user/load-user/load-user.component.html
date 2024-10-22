@@ -1,0 +1,46 @@
+<div class="bootstrap-wrapper">
+    <h3>Available Quizzes</h3>
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <!-- Display this div if there are no quizzes -->
+            <div class="col-lg-6" *ngIf="quizes.length === 0" style="box-shadow: 0px 0px 30px -10px;">
+                <div class="text-center">
+                    <h3>No Quiz in This Category</h3>
+                </div>
+            </div>
+
+            <!-- Loop through quizzes and display them if available -->
+            <div class="col-lg-6 col-sm-6 col-md-6" *ngFor="let q of quizes">
+                <div class="card mb-3" style="box-shadow: 0px 0px 30px -10px; max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="images/registration.webp" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{q.title}}</h5>
+                                <p class="card-text">{{q.description}}</p>
+                                <div class="d-flex justify-content-between flex-wrap">
+                                    <b>
+                                        <p class="card-text mb-1">
+                                            <small class="text-muted">NumberOfQuestions: {{q.numberOfQuestions}}</small>
+                                        </p>
+                                    </b>
+                                    <b>
+                                        <p class="card-text mb-1">
+                                            <small class="text-muted">Max Marks: {{q.maxMarks}}</small>
+                                        </p>
+                                    </b>
+                                </div>
+                                <div class="d-flex justify-content-between flex-wrap mt-3">
+                                    <button type="button" class="btn btn-primary">View</button>
+                                    <button type="button" class="btn btn-danger" [routerLink]="['/user-dashboard/load-quiz-page', q.qid]">Start</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

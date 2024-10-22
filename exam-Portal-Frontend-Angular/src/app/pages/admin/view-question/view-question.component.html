@@ -1,0 +1,41 @@
+<div class="bootstrap-wrapper pb-4">
+    <div class="container">
+        <div class="row mb-4" style="box-shadow: 0px 0px 30px -10px;" *ngFor="let ques of questions; let i = index">
+            <div class="content pt-4">
+                <b><p>Q{{i + 1}}: {{ques.content}}</p></b> 
+            </div>
+            <div class="col-md-8" style="display: flex; justify-content: space-between;">
+                <b><p>1: {{ques.opt1}}</p></b>
+                <b><p>2: {{ques.opt2}}</p></b>
+            </div>
+            <div class="col-md-8" style="display: flex; justify-content: space-between;">
+                <b><p>3: {{ques.opt3}}</p></b>
+                <b><p>4: {{ques.opt4}}</p></b>
+            </div>
+            <div class="hrline">
+                <hr>
+            </div>
+            <div class="correct">
+                <b><p>Correct Answer: {{ques.answer}}</p></b>
+            </div>
+            <div class="btn" style="display: flex; justify-content: space-between; width: 50%; margin: auto;">
+                <button type="button" class="btn btn-danger" (click)="deleteQues(ques.quesId)">Delete</button>
+                <button type="button" class="btn btn-primary" [routerLink]="['/admin-dashboard/update-question', ques.quesId]">Update</button>
+            </div>
+        </div>
+    </div>
+</div>
+                      <!-- Feedback Messages -->
+                      <div *ngIf="successMessage" class="alert alert-success">
+                        {{ successMessage }}
+                      </div>
+                      <div *ngIf="errorMessage" class="alert alert-danger">
+                        {{ errorMessage }}
+                      </div>
+
+
+<div class="btn" style="display: flex; justify-content:center ;">
+    <button type="button" class="btn btn-danger" style="width: 250px; height: 50px; font-size: 18px;" [routerLink]="['/admin-dashboard/add-question', qId,qTitle]">Add Questions</button>
+</div>
+
+{{questions | json}}

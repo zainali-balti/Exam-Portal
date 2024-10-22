@@ -1,0 +1,79 @@
+<div class="bootstrap-wrapper">
+    <div class="container pt-4 d-flex justify-content-center" style="box-shadow: 0px 0px 30px -10px;">
+        <div class="col-lg-8 col-md-10 col-sm-12">
+            <div class="text-center mb-4">
+                <h3>Update User</h3>
+            </div>
+            <div class="row" style="padding: 20px;">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">UserName</label>
+                            <input [(ngModel)]="userData.userName" name="userName" type="text" class="form-control" aria-describedby="emailHelp">
+                            <div class="form-text">We'll never share your UserName with anyone else.</div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">FirstName</label>
+                            <input [(ngModel)]="userData.firstName" name="firstName" type="text" class="form-control" aria-describedby="emailHelp">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">LastName</label>
+                            <input [(ngModel)]="userData.lastName" name="lastName" type="text" class="form-control" aria-describedby="emailHelp">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Email address</label>
+                            <input [(ngModel)]="userData.email" name="email" type="email" class="form-control" aria-describedby="emailHelp">
+                            <div class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Password</label>
+                            <input [(ngModel)]="userData.password" name="password" type="password" class="form-control">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">PhoneNo</label>
+                            <input [(ngModel)]="userData.phoneNo" name="phoneNo" type="number" class="form-control" aria-describedby="emailHelp">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="form-check">
+                                <input [(ngModel)]="userData.enabled" name="userData.enabled" type="checkbox" name="enabled" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Status</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="categorySelect" class="form-label">Select Authority</label>
+                            <select
+                            class="form-select mt-2"
+                            [(ngModel)]="userData.authorities[0].authority"
+                            name="authorities"
+                            id="authoritySelect"
+                            aria-label="Select Authority"
+                            required>
+                            <option selected disabled value="">Select the category</option>
+                            <option *ngFor="let auth of availableAuthorities" [value]="auth">
+                              {{ auth }}
+                            </option>
+                          </select>
+                          </div>
+                    </div>
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary" style="width: 150px; height: 50px; font-size: 18px;" (click)="updateUser()">update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{userData | json}}

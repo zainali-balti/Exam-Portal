@@ -1,0 +1,55 @@
+@media (max-width: 576px) {
+    h5 {
+        font-size: 16px; /* Adjust font size on small screens */
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) {
+    h5 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    h5 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+/* Flexbox for small screens (mobile) */
+.buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    justify-content: flex-start; /* Align buttons to the start */
+}
+
+/* For tablet screens (768px to 992px) */
+@media (min-width: 768px) and (max-width: 992px) {
+    .buttons-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+        gap: 20px; /* Space between buttons and rows */
+    }
+    
+    .button-column {
+        display: block; /* Stack buttons within each column */
+        width: 100%;
+    }
+}
+
+button {
+    width: 20%; /* Ensure buttons take full width of their container */
+    min-width: 200px; /* Prevent buttons from shrinking too much */
+}

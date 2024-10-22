@@ -1,0 +1,32 @@
+@media (max-width: 1600px) and (min-width: 1000px) {
+    .bootstrap-wrapper .col-md-8 {
+        width: 70% !important;
+    }
+    .bootstrap-wrapper .col-md-4{
+        width: 30% !important; 
+    }
+
+
+    .bootstrap-wrapper .col-md-4{
+        max-width: 30%;
+    } 
+    .bootstrap-wrapper .col-md-8 {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 1001px) {
+    .bootstrap-wrapper .col-12 {
+        width: 100% !important;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .bootstrap-wrapper .mb-4{
+        width: 100% !important;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    
+   
+}

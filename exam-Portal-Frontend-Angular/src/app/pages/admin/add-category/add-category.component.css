@@ -1,0 +1,43 @@
+/* General style for the form container */
+.form {
+    width: 50%; /* Default width for larger screens */
+    margin: auto; /* Center the form horizontally */
+}
+
+/* Center the form for tablets (<= 1024px) */
+@media (max-width: 1024px) {
+    .form {
+        width: 60%; /* Slightly larger width on tablets */
+    }
+}
+
+/* Center the form and make inputs full width on smaller devices (<= 768px) */
+@media (max-width: 768px) {
+    .form {
+        width: 100%; /* Full width for smaller screens */
+        margin: 0 auto; /* Center the form */
+    }
+
+    /* Make inputs full width */
+    .form .form-control {
+        width: 100%; /* Inputs take full width */
+        font-size: 16px; /* Adjust input font size */
+    }
+
+    .buttons button {
+        width: 100%; /* Button takes full width on small screens */
+        font-size: 16px; /* Adjust font size for buttons */
+    }
+}
+
+/* For mobile-specific media query (<= 576px) */
+@media (max-width: 576px) {
+    .form .form-control {
+        font-size: 14px; /* Further reduce input font size for mobile */
+    }
+
+    .buttons button {
+        font-size: 14px; /* Reduce button font size for mobile */
+        height: 45px; /* Adjust button height */
+    }
+}
